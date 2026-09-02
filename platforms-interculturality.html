@@ -1,0 +1,251 @@
+<!-- platforms-interculturality.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Platforms, Identity & Mobility — Siyu Zhou</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+  :root{
+    --bg: #F6F7F8;
+    --text: #26333F;
+    --accent: #7B8FA1;
+    --accent-warm: #B08968;
+    --card: #FFFFFF;
+    --card-alt: #EFEFEF;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a{ color: inherit; }
+
+  h1, h2{
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .amp{
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-weight: 500;
+  }
+
+  /* ---------- Navigation ---------- */
+  .nav-wrap{
+    border-bottom: 1px solid #E1E4E8;
+    background: var(--bg);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  nav{
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 22px 32px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 8px 28px;
+  }
+
+  nav a{
+    text-decoration: none;
+    font-size: 0.95rem;
+    color: var(--text);
+    padding-bottom: 6px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s ease, color 0.2s ease;
+  }
+
+  nav a:hover{
+    color: var(--accent);
+  }
+
+  nav a.current{
+    color: var(--accent);
+    border-bottom-color: var(--accent-warm);
+  }
+
+  /* ---------- Page header ---------- */
+  .page-header{
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 64px 32px 40px;
+  }
+
+  .page-header h1{
+    font-size: 2.4rem;
+    line-height: 1.2;
+    margin-bottom: 22px;
+    max-width: 20ch;
+  }
+
+  .lede{
+    max-width: 66ch;
+    font-size: 1.05rem;
+    color: var(--text);
+  }
+
+  /* ---------- Publications ---------- */
+  .pubs{
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 8px 32px 96px;
+  }
+
+  .pub-category{
+    margin-top: 28px;
+    padding-top: 40px;
+    border-top: 1px solid #E1E4E8;
+  }
+
+  .pub-category h2{
+    font-size: 1.05rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 20px;
+  }
+
+  .pub-list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .pub-list li{
+    font-size: 0.98rem;
+    color: var(--text);
+    line-height: 1.65;
+    max-width: 74ch;
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .pub-list li::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent-warm);
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 28px 32px 48px;
+    font-size: 0.82rem;
+    color: #7C8894;
+    border-top: 1px solid #E1E4E8;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 760px){
+    .page-header{
+      padding: 44px 22px 32px;
+    }
+
+    .page-header h1{
+      font-size: 1.9rem;
+      max-width: none;
+    }
+
+    nav{
+      padding: 18px 22px;
+      gap: 6px 18px;
+    }
+
+    .pubs{
+      padding: 8px 22px 64px;
+    }
+
+    .pub-category{
+      margin-top: 22px;
+      padding-top: 32px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="nav-wrap">
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="platforms-interculturality.html" class="current">Platforms &amp; Interculturality</a>
+    <a href="platforms-at-work.html">Platforms at Work</a>
+    <a href="teaching.html">Teaching</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</div>
+
+<header class="page-header">
+  <h1>Digital Platforms, Identity <span class="amp">&amp;</span> Mobility</h1>
+  <p class="lede">My first line of research examines how mobile populations — international students, migrant creators, and diasporic communities — use digital platforms to perform identity and accumulate social capital across national and cultural boundaries.</p>
+</header>
+
+<section class="pubs">
+
+  <div class="pub-category">
+    <h2>Journal Articles</h2>
+    <ul class="pub-list">
+      <li>Zhou, S., &amp; Jia, D. (2026). Platformized intercultural communication competence: Cross-platform identity negotiation by a Chinese migrant creator in Spain. <em>Discourse, Context &amp; Media</em>, 71, 101010.</li>
+      <li>Zhou, S., &amp; Yin, J. (2025). International students' social media use: An integrative review of research over a decade. <em>Journal of Studies in International Education</em>, 29(1), 42–63.</li>
+    </ul>
+  </div>
+
+  <div class="pub-category">
+    <h2>Book Chapter</h2>
+    <ul class="pub-list">
+      <li>Zhou, S., &amp; Jia, D. (2026). The rise of Chinese e-commerce platforms: A comparative framing analysis based on British and Spanish mainstream media coverage [in Chinese]. In <em>智能传播语境下的国际传播</em> [International communication in the context of intelligent communication]. Southern Daily Press.</li>
+    </ul>
+  </div>
+
+  <div class="pub-category">
+    <h2>Manuscripts In Progress</h2>
+    <ul class="pub-list">
+      <li>Platforms as infrastructure of mobility: Platform-swinging, liquid identity, and capital accumulation in transnational lives. (Working paper, presented at ICA 2025)</li>
+      <li>Can AI Cure Loneliness? Social Anxiety as a Boundary Condition for Generative AI's Emotional Support and Its Limits for Social Capital. (Working paper)</li>
+    </ul>
+  </div>
+
+  <div class="pub-category">
+    <h2>Selected Conference Presentations</h2>
+    <ul class="pub-list">
+      <li>Cross-cultural communication across platforms: Impact of cross-platform engagement on capital accumulation among Chinese international students. ICA 2025.</li>
+      <li>Negotiating cultural identities across platforms: A multimodal analysis of overseas Chinese content creators' online interactions. Joint Symposium, Xi'an Jiaotong-Liverpool University, 2025.</li>
+      <li>News portrayal of China's overseas e-commerce expansion in European media. Forum on Communicating EU-China Relations, Tsinghua University, 2024.</li>
+      <li>Ten years of research on social media use of international students: A synthesis and agenda. IAMCR 2023.</li>
+      <li>Platform-swinging strategies among Chinese international students (two presentations). IAMCR 2021.</li>
+      <li>The use of social network sites influences perceived social capital: Case of Chinese international students in Barcelona. IAMCR 2020.</li>
+    </ul>
+  </div>
+
+</section>
+
+<footer>
+  &copy; Siyu Zhou. Cheung Kong School of Journalism and Communication, Shantou University.
+</footer>
+
+</body>
+</html>

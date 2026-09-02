@@ -1,0 +1,268 @@
+<!-- teaching.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teaching — Siyu Zhou</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+  :root{
+    --bg: #F6F7F8;
+    --text: #26333F;
+    --accent: #7B8FA1;
+    --accent-warm: #B08968;
+    --card: #FFFFFF;
+    --card-alt: #EFEFEF;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a{ color: inherit; }
+
+  h1, h2{
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  /* ---------- Navigation ---------- */
+  .nav-wrap{
+    border-bottom: 1px solid #E1E4E8;
+    background: var(--bg);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  nav{
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 22px 32px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 8px 28px;
+  }
+
+  nav a{
+    text-decoration: none;
+    font-size: 0.95rem;
+    color: var(--text);
+    padding-bottom: 6px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s ease, color 0.2s ease;
+  }
+
+  nav a:hover{
+    color: var(--accent);
+  }
+
+  nav a.current{
+    color: var(--accent);
+    border-bottom-color: var(--accent-warm);
+  }
+
+  /* ---------- Page header ---------- */
+  .page-header{
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 64px 32px 40px;
+  }
+
+  .page-header h1{
+    font-size: 2.4rem;
+    line-height: 1.2;
+    margin-bottom: 14px;
+  }
+
+  .affiliation{
+    font-size: 1rem;
+    color: var(--accent);
+  }
+
+  /* ---------- Sections ---------- */
+  .teaching-body{
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 8px 32px 96px;
+  }
+
+  .teach-section{
+    padding-top: 40px;
+    border-top: 1px solid #E1E4E8;
+  }
+
+  .teach-section h2{
+    font-size: 1.05rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .section-note{
+    font-size: 0.9rem;
+    color: #5B6773;
+    margin: 0 0 20px;
+    max-width: 62ch;
+  }
+
+  /* Course cards */
+  .course-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .course-card{
+    background: var(--card);
+    border: 1px solid #E1E4E8;
+    border-radius: 6px;
+    padding: 22px 24px;
+    font-size: 0.98rem;
+    color: var(--text);
+    transition: border-color 0.2s ease, background 0.2s ease;
+  }
+
+  .course-card:hover{
+    border-color: var(--accent-warm);
+    background: var(--card-alt);
+  }
+
+  /* Supervision list */
+  .supervision-list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .supervision-list li{
+    font-size: 0.98rem;
+    color: var(--text);
+    line-height: 1.65;
+    max-width: 74ch;
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .supervision-list li::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent-warm);
+  }
+
+  .project-role{
+    color: var(--accent);
+  }
+
+  .project-years{
+    color: #5B6773;
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 28px 32px 48px;
+    font-size: 0.82rem;
+    color: #7C8894;
+    border-top: 1px solid #E1E4E8;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 760px){
+    .page-header{
+      padding: 44px 22px 32px;
+    }
+
+    .page-header h1{
+      font-size: 1.9rem;
+    }
+
+    nav{
+      padding: 18px 22px;
+      gap: 6px 18px;
+    }
+
+    .teaching-body{
+      padding: 8px 22px 64px;
+    }
+
+    .teach-section{
+      padding-top: 32px;
+    }
+
+    .course-grid{
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="nav-wrap">
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="platforms-interculturality.html">Platforms &amp; Interculturality</a>
+    <a href="platforms-at-work.html">Platforms at Work</a>
+    <a href="teaching.html" class="current">Teaching</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</div>
+
+<header class="page-header">
+  <h1>Teaching</h1>
+  <p class="affiliation">Cheung Kong School of Journalism and Communication, Shantou University</p>
+</header>
+
+<section class="teaching-body">
+
+  <div class="teach-section">
+    <h2>Undergraduate Courses</h2>
+    <p class="section-note">All courses taught bilingually, offered continuously since 2022.</p>
+    <div class="course-grid">
+      <div class="course-card">Global News and Digital Media Practice</div>
+      <div class="course-card">International News Reporting and Writing</div>
+      <div class="course-card">Multimedia News &amp; Storytelling Analysis</div>
+      <div class="course-card">International Communication in the Digital Age</div>
+    </div>
+  </div>
+
+  <div class="teach-section">
+    <h2>Student Innovation Training Program Supervision</h2>
+    <ul class="supervision-list">
+      <li><span class="project-role">Supervisor, Guangdong Provincial College Students' Innovation Training Program:</span> A Speech Corpus of the Chaoshan Dialect Based on Nan'ao Island Food Culture. <span class="project-years">2025–2026</span></li>
+      <li><span class="project-role">Supervisor, Shantou University College Students' Innovation Training Program:</span> Localizing Web3.0 Meme-Based Business Models in the Chinese Context. <span class="project-years">2024–2025</span></li>
+      <li><span class="project-role">Supervisor, Guangdong Provincial College Students' Innovation Training Program:</span> Building a Mythical-Creature IP and Game Product Based on Chaoshan Proverbs. <span class="project-years">2023–2024</span></li>
+    </ul>
+  </div>
+
+</section>
+
+<footer>
+  &copy; Siyu Zhou. Cheung Kong School of Journalism and Communication, Shantou University.
+</footer>
+
+</body>
+</html>

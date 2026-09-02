@@ -1,0 +1,416 @@
+<!-- contact.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Siyu Zhou</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+  :root{
+    --bg: #F6F7F8;
+    --text: #26333F;
+    --accent: #7B8FA1;
+    --accent-warm: #B08968;
+    --card: #FFFFFF;
+    --card-alt: #EFEFEF;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  a{ color: inherit; }
+
+  h1{
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  /* ---------- Navigation ---------- */
+  .nav-wrap{
+    border-bottom: 1px solid #E1E4E8;
+    background: var(--bg);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  nav{
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 22px 32px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 8px 28px;
+  }
+
+  nav a{
+    text-decoration: none;
+    font-size: 0.95rem;
+    color: var(--text);
+    padding-bottom: 6px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s ease, color 0.2s ease;
+  }
+
+  nav a:hover{
+    color: var(--accent);
+  }
+
+  nav a.current{
+    color: var(--accent);
+    border-bottom-color: var(--accent-warm);
+  }
+
+  /* ---------- Main ---------- */
+  main{
+    flex: 1;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 72px 32px 96px;
+    width: 100%;
+  }
+
+  main h1{
+    font-size: 2.4rem;
+    margin-bottom: 22px;
+  }
+
+  .contact-intro{
+    max-width: 62ch;
+    font-size: 1.03rem;
+    color: var(--text);
+    margin: 0 0 44px;
+  }
+
+  .contact-card{
+    background: var(--card);
+    border: 1px solid #E1E4E8;
+    border-radius: 6px;
+    padding: 40px 44px;
+    max-width: 520px;
+  }
+
+  .contact-row{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 18px 0;
+    border-bottom: 1px solid #E9EBED;
+  }
+
+  .contact-row:first-child{
+    padding-top: 0;
+  }
+
+  .contact-row:last-child{
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .contact-label{
+    font-size: 0.8rem;
+    color: var(--accent);
+  }
+
+  .contact-value{
+    font-size: 1.02rem;
+    color: var(--text);
+  }
+
+  .contact-value a{
+    text-decoration: none;
+    border-bottom: 1px solid #C7CDD3;
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .contact-value a:hover{
+    color: var(--accent-warm);
+    border-color: var(--accent-warm);
+  }
+
+  /* ---------- Contact form ---------- */
+  .contact-layout{
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+
+  .form-card{
+    background: var(--card);
+    border: 1px solid #E1E4E8;
+    border-radius: 6px;
+    padding: 40px 44px;
+  }
+
+  .form-card h2{
+    font-size: 1.05rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .form-note{
+    font-size: 0.92rem;
+    color: #5B6773;
+    margin: 0 0 28px;
+  }
+
+  .field{
+    margin-bottom: 20px;
+  }
+
+  .field label{
+    display: block;
+    font-size: 0.88rem;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+
+  .field .required{
+    color: var(--accent-warm);
+  }
+
+  .field input,
+  .field textarea{
+    width: 100%;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 0.96rem;
+    color: var(--text);
+    background: var(--bg);
+    border: 1px solid #D5DAE0;
+    border-radius: 5px;
+    padding: 11px 13px;
+    transition: border-color 0.2s ease;
+  }
+
+  .field input:focus,
+  .field textarea:focus{
+    outline: none;
+    border-color: var(--accent);
+  }
+
+  .field textarea{
+    min-height: 130px;
+    resize: vertical;
+  }
+
+  .hp-field{
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+  }
+
+  .submit-btn{
+    font-family: 'Inter', sans-serif;
+    font-size: 0.96rem;
+    font-weight: 500;
+    color: #FFFFFF;
+    background: var(--accent-warm);
+    border: none;
+    border-radius: 5px;
+    padding: 13px 28px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+
+  .submit-btn:hover{
+    background: #9A7658;
+  }
+
+  .submit-btn:disabled{
+    background: #C9BBAD;
+    cursor: default;
+  }
+
+  .form-status{
+    margin-top: 16px;
+    font-size: 0.92rem;
+  }
+
+  .form-status.success{ color: #4B7C5D; }
+  .form-status.error{ color: #B05050; }
+
+  .side-info{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 24px 32px 40px;
+    width: 100%;
+  }
+
+  .footer-note{
+    font-size: 0.82rem;
+    color: #7C8894;
+    border-top: 1px solid #E1E4E8;
+    padding-top: 20px;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 760px){
+    nav{
+      padding: 18px 22px;
+      gap: 6px 18px;
+    }
+
+    main{
+      padding: 48px 22px 72px;
+    }
+
+    main h1{
+      font-size: 1.9rem;
+      margin-bottom: 32px;
+    }
+
+    .contact-card{
+      padding: 32px 26px;
+      max-width: none;
+    }
+
+    .contact-layout{
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    .form-card{
+      padding: 28px 24px;
+    }
+
+    footer{
+      padding: 24px 22px 36px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="nav-wrap">
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="platforms-interculturality.html">Platforms &amp; Interculturality</a>
+    <a href="platforms-at-work.html">Platforms at Work</a>
+    <a href="teaching.html">Teaching</a>
+    <a href="contact.html" class="current">Contact</a>
+  </nav>
+</div>
+
+<main>
+  <h1>Contact</h1>
+  <p class="contact-intro">I'm always glad to hear from others working on digital platforms, identity, or the changing nature of work — whether that means a question about my research, an interest in collaborating, or a conversation about teaching. As an early-career researcher, I'm especially keen to build these connections, so please feel free to reach out.</p>
+
+  <div class="contact-layout">
+    <div class="form-card">
+      <h2>Get in Touch</h2>
+      <p class="form-note">Please use the form below if you have any questions or inquiries — I'll reply by email.</p>
+
+      <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact">
+        <p class="hp-field"><label>Don't fill this out: <input name="bot-field"></label></p>
+
+        <div class="field">
+          <label for="name">Name <span class="required">*</span></label>
+          <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="field">
+          <label for="email">Email <span class="required">*</span></label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="field">
+          <label for="subject">Subject <span class="required">*</span></label>
+          <input type="text" id="subject" name="subject" required>
+        </div>
+
+        <div class="field">
+          <label for="message">Message <span class="required">*</span></label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Send message</button>
+        <p id="form-status" class="form-status" role="status"></p>
+      </form>
+    </div>
+
+    <div class="side-info">
+      <div class="contact-card">
+        <div class="contact-row">
+          <span class="contact-label">Email</span>
+          <span class="contact-value"><a href="mailto:syzhou@stu.edu.cn">syzhou@stu.edu.cn</a></span>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">Address</span>
+          <span class="contact-value">Cheung Kong School of Journalism and Communication, Shantou University, Shantou, Guangdong, China</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script>
+  const form = document.getElementById('contact-form');
+  const status = document.getElementById('form-status');
+
+  function encode(data) {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const formData = Object.fromEntries(new FormData(form).entries());
+    const submitBtn = form.querySelector('.submit-btn');
+    submitBtn.disabled = true;
+    status.textContent = '';
+    status.className = 'form-status';
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode(formData)
+    })
+      .then(() => {
+        status.textContent = 'Thanks — your message has been sent. I\'ll get back to you soon.';
+        status.className = 'form-status success';
+        form.reset();
+      })
+      .catch(() => {
+        status.textContent = 'Something went wrong. Please try emailing me directly instead.';
+        status.className = 'form-status error';
+      })
+      .finally(() => {
+        submitBtn.disabled = false;
+      });
+  });
+</script>
+
+<footer>
+</footer>
+
+</body>
+</html>

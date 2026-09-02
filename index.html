@@ -1,0 +1,337 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Siyu Zhou, Ph.D.</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+  :root{
+    --bg: #F6F7F8;
+    --text: #26333F;
+    --accent: #7B8FA1;
+    --accent-warm: #B08968;
+    --card: #FFFFFF;
+    --card-alt: #EFEFEF;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a{ color: inherit; }
+
+  h1, h2, h3{
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .amp{
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-weight: 500;
+  }
+
+  /* ---------- Navigation ---------- */
+  .nav-wrap{
+    border-bottom: 1px solid #E1E4E8;
+    background: var(--bg);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  nav{
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 22px 32px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 8px 28px;
+  }
+
+  nav a{
+    text-decoration: none;
+    font-size: 0.95rem;
+    color: var(--text);
+    padding-bottom: 6px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s ease, color 0.2s ease;
+  }
+
+  nav a:hover{
+    color: var(--accent);
+  }
+
+  nav a.current{
+    color: var(--accent);
+    border-bottom-color: var(--accent-warm);
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 72px 32px 64px;
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .identity{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 26px;
+  }
+
+  .avatar{
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    max-width: 320px;
+    border-radius: 14px;
+    background: #D8DCE1;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 4.8rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  .avatar img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .quick-links{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 0.92rem;
+  }
+
+  .quick-links a{
+    text-decoration: none;
+    color: var(--text);
+    border-bottom: 1px solid #C7CDD3;
+    width: fit-content;
+    padding-bottom: 1px;
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .quick-links a:hover{
+    color: var(--accent-warm);
+    border-color: var(--accent-warm);
+  }
+
+  .intro h1{
+    font-size: 2.5rem;
+    line-height: 1.15;
+    margin-bottom: 14px;
+  }
+
+  .role{
+    font-size: 1.1rem;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  .affiliation{
+    font-size: 0.98rem;
+    color: var(--accent);
+    margin-bottom: 28px;
+  }
+
+  .bio{
+    max-width: 62ch;
+    font-size: 1.02rem;
+    color: var(--text);
+  }
+
+  /* ---------- Research lines ---------- */
+  .lines-section{
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 8px 32px 88px;
+  }
+
+  .lines-heading{
+    font-size: 1.05rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 22px;
+    padding-top: 40px;
+    border-top: 1px solid #E1E4E8;
+  }
+
+  .lines-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .line-card{
+    background: var(--card);
+    border: 1px solid #E1E4E8;
+    border-radius: 6px;
+    padding: 32px;
+    text-decoration: none;
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: border-color 0.2s ease, background 0.2s ease;
+  }
+
+  .line-card:hover{
+    border-color: var(--accent-warm);
+    background: var(--card-alt);
+  }
+
+  .line-card h3{
+    font-size: 1.3rem;
+    color: var(--text);
+  }
+
+  .line-card p{
+    margin: 0;
+    font-size: 0.95rem;
+    color: #4A5762;
+  }
+
+  .line-card .goto{
+    margin-top: auto;
+    font-size: 0.85rem;
+    color: var(--accent);
+    padding-top: 8px;
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 28px 32px 48px;
+    font-size: 0.82rem;
+    color: #7C8894;
+    border-top: 1px solid #E1E4E8;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 760px){
+    .hero{
+      grid-template-columns: 1fr;
+      gap: 32px;
+      padding: 48px 22px 40px;
+    }
+
+    .identity{
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .avatar{
+      max-width: 180px;
+      font-size: 2.6rem;
+    }
+
+    .quick-links{
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .intro h1{
+      font-size: 1.9rem;
+    }
+
+    .lines-grid{
+      grid-template-columns: 1fr;
+    }
+
+    .lines-section{
+      padding: 8px 22px 64px;
+    }
+
+    nav{
+      padding: 18px 22px;
+      gap: 6px 18px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="nav-wrap">
+  <nav>
+    <a href="index.html" class="current">Home</a>
+    <a href="platforms-interculturality.html">Platforms &amp; Interculturality</a>
+    <a href="platforms-at-work.html">Platforms at Work</a>
+    <a href="teaching.html">Teaching</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</div>
+
+<section class="hero">
+  <div class="identity">
+    <div class="avatar"><img src="profile-photo.jpg" alt="Siyu Zhou"></div>
+    <div class="quick-links">
+      <a href="https://orcid.org/0000-0001-9233-9316" target="_blank" rel="noopener" aria-label="ORCID profile">ORCID</a>
+      <a href="https://www.linkedin.com/in/siyu-zhou-leon" target="_blank" rel="noopener" aria-label="LinkedIn profile">LinkedIn</a>
+      <a href="https://scholar.google.com/citations?user=lai7oB8AAAAJ&amp;hl=en" target="_blank" rel="noopener" aria-label="Google Scholar profile">Google Scholar</a>
+      <a href="https://www.researchgate.net/profile/Siyu_Zhou7" target="_blank" rel="noopener" aria-label="ResearchGate profile">ResearchGate</a>
+    </div>
+  </div>
+
+  <div class="intro">
+    <h1>Siyu Zhou, Ph.D.</h1>
+    <p class="role">Assistant Professor in International Journalism and Communication</p>
+    <p class="affiliation">Cheung Kong School of Journalism and Communication, Shantou University</p>
+    <p class="bio">I completed my first PhD in Communication at Universitat Pompeu Fabra (Spain) in 2022, examining how the Chinese diaspora in Spain used digital platforms to perform identity and accumulate social capital across national and cultural boundaries. Since then, my work has developed along two related lines: one continues this interest in how mobile populations use digital platforms for identity performance, and the other examines organisational platforms — particularly enterprise social media and generative AI — across the boundary between work and everyday life. I work primarily through qualitative case research, complemented by survey and computational text analysis.</p>
+  </div>
+</section>
+
+<section class="lines-section">
+  <h2 class="lines-heading">Research Lines</h2>
+  <div class="lines-grid">
+    <a class="line-card" href="platforms-interculturality.html">
+      <h3>Digital Platforms, Identity <span class="amp">&amp;</span> Mobility</h3>
+      <p>How mobile populations use digital platforms to perform identity across borders</p>
+      <span class="goto">Explore this line</span>
+    </a>
+    <a class="line-card" href="platforms-at-work.html">
+      <h3>Digital Platforms at Work</h3>
+      <p>How enterprise platforms and generative AI reshape the boundary between work and life</p>
+      <span class="goto">Explore this line</span>
+    </a>
+  </div>
+</section>
+
+<footer>
+  &copy; Siyu Zhou. Cheung Kong School of Journalism and Communication, Shantou University.
+</footer>
+
+</body>
+</html>
