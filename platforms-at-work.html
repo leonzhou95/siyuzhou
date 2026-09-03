@@ -79,20 +79,38 @@
   .page-header{
     max-width: 1080px;
     margin: 0 auto;
-    padding: 64px 32px 40px;
+    padding: 64px 32px 8px;
   }
 
   .page-header h1{
     font-size: 2.4rem;
     line-height: 1.2;
-    margin-bottom: 22px;
+    margin-bottom: 0;
     max-width: 20ch;
   }
 
+  /* ---------- Story intro ---------- */
+  .story-intro{
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 32px 32px 8px;
+  }
+
   .lede{
-    max-width: 66ch;
     font-size: 1.05rem;
     color: var(--text);
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+
+  .lede + .lede{
+    margin-top: 18px;
+  }
+
+  .lede strong{
+    font-weight: 600;
   }
 
   /* ---------- Publications ---------- */
@@ -158,12 +176,20 @@
   /* ---------- Responsive ---------- */
   @media (max-width: 760px){
     .page-header{
-      padding: 44px 22px 32px;
+      padding: 44px 22px 4px;
     }
 
     .page-header h1{
       font-size: 1.9rem;
       max-width: none;
+    }
+
+    .story-intro{
+      padding: 24px 22px 4px;
+    }
+
+    .lede{
+      text-align: left;
     }
 
     nav{
@@ -196,8 +222,12 @@
 
 <header class="page-header">
   <h1>Digital Platforms at Work</h1>
-  <p class="lede">My second line of research examines organisational platforms — particularly enterprise social media and generative AI — and how they reshape the boundary between work and everyday life.</p>
 </header>
+
+<section class="story-intro">
+  <p class="lede">My second line of research examines organisational platforms, particularly enterprise social media and generative AI, and <strong>how they shape knowledge workers' behaviors, performance, and adaptation</strong>, as well as the boundary between work and everyday life, across both national and transnational workplace contexts.</p>
+  <p class="lede">This line of research is more recent, evolving alongside changes in my own professional life. Since 2013, I have worked as a freelance interpreter and translator across a range of industries, from leading delegations at Sino-German trade fairs to interpreting for Chinese university delegations and international technology conferences in Barcelona, as well as contributing to a Spanish-language textbook series for Chinese high schools. Along the way, I met many colleagues and peers, some of whom went on to relocate abroad for work, and I watched them navigate unfamiliar workplace cultures and the digital platforms mediating them. That experience shaped my interest in how digital platform infrastructures organize, and sometimes complicate, the work people do and the lives they lead alongside it.</p>
+</section>
 
 <section class="pubs">
 

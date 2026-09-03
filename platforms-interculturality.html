@@ -84,20 +84,38 @@
   .page-header{
     max-width: 1080px;
     margin: 0 auto;
-    padding: 64px 32px 40px;
+    padding: 64px 32px 8px;
   }
 
   .page-header h1{
     font-size: 2.4rem;
     line-height: 1.2;
-    margin-bottom: 22px;
+    margin-bottom: 0;
     max-width: 20ch;
   }
 
+  /* ---------- Story intro ---------- */
+  .story-intro{
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 32px 32px 8px;
+  }
+
   .lede{
-    max-width: 66ch;
     font-size: 1.05rem;
     color: var(--text);
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+
+  .lede + .lede{
+    margin-top: 18px;
+  }
+
+  .lede strong{
+    font-weight: 600;
   }
 
   /* ---------- Publications ---------- */
@@ -163,12 +181,20 @@
   /* ---------- Responsive ---------- */
   @media (max-width: 760px){
     .page-header{
-      padding: 44px 22px 32px;
+      padding: 44px 22px 4px;
     }
 
     .page-header h1{
       font-size: 1.9rem;
       max-width: none;
+    }
+
+    .story-intro{
+      padding: 24px 22px 4px;
+    }
+
+    .lede{
+      text-align: left;
     }
 
     nav{
@@ -201,8 +227,12 @@
 
 <header class="page-header">
   <h1>Digital Platforms, Identity <span class="amp">&amp;</span> Mobility</h1>
-  <p class="lede">My first line of research examines how mobile populations — international students, migrant creators, and diasporic communities — use digital platforms to perform identity and accumulate social capital across national and cultural boundaries.</p>
 </header>
+
+<section class="story-intro">
+  <p class="lede">My first line of research examines how <strong>mobile populations</strong>, including international students, expatriates, and new migrants, <strong>use digital platforms to perform identity and build social capital and social positioning</strong> across national and cultural boundaries.</p>
+  <p class="lede">This research interest is closely tied to my own experience. I spent a year as an undergraduate exchange student at Pontificia Universidad Javeriana in Bogotá, Colombia, from 2015 to 2016. As <strong>one of only two Chinese students on campus</strong>, and among very few in the country at the time, I learned firsthand what it takes to build a sense of belonging from scratch, often through digital connections back home and Facebook groups set up for international students. Later, while completing graduate studies in Spain, I spent a year working as a new media editor for Barcelona Television's Chinese-language channel. I grew its WeChat account from zero to more than 6,000 followers and watched it <strong>become one of the primary channels through which the local Chinese community stayed informed and connected from then on</strong>. That hands-on experience with how diasporic communities build identity and belonging through digital platforms continues to shape this line of research today.</p>
+</section>
 
 <section class="pubs">
 
